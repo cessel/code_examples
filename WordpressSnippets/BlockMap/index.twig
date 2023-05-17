@@ -1,0 +1,8 @@
+{% set class = 'ksma-block-map' %}
+<section class="{{ class }}{{ background != 'no' ? ' is-bg-' ~ background }}" data-nonce="{{ nonce }}" data-admin_url="{{ admin_url }}" is="{{ class }}">
+  <div class="ksma-container">
+    <div class="{{ class }}__map" id="map" data-lat="{{ lat }}" data-lng="{{ lng }}" data-address="{{ address }}" style="background-image: url({{ preloader_img }});">
+      <div class="{{ class }}__loader"></div>
+    </div>
+  </div>
+</section>

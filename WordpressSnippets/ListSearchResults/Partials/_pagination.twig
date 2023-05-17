@@ -1,0 +1,11 @@
+<div class="ksma-pagination">
+  {% if pagination.prev %}
+    <a href="{{ pagination.prev.link }}" class="ksma-pagination__prev"></a>
+  {% endif %}
+  {% for page in pagination.pages %}
+    <a class="ksma-pagination__page {{ page.class }}" href="{{ page.link }}">{{ page.title }}</a>
+  {% endfor %}
+  {% if pagination.next %}
+    <a href="{{ pagination.next.link }}" class="ksma-pagination__next"></a>
+  {% endif %}
+</div>

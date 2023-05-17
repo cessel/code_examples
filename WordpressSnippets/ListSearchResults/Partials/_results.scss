@@ -1,0 +1,86 @@
+.ksma-search-results {
+  list-style: none;
+  padding: 0;
+
+  &__item {
+    border-bottom: 1px solid $white-f0;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+
+    @include spec(white) {
+      border-color: $black;
+    }
+    @include spec(black) {
+      border-color: $white;
+    }
+  }
+
+  &__title {
+    font-size: rem(24);
+    line-height: rem(36);
+    margin-bottom: 10px;
+
+    a {
+      @include spec(black) {
+        color: $white;
+      }
+    }
+  }
+
+  &__desc {
+    font-size: rem(16);
+    line-height: rem(26);
+
+    @include spec(black) {
+      color: $white;
+    }
+  }
+
+  &__footer {
+    color: $grey-92;
+    font-size: rem(14);
+    line-height: rem(24);
+    margin-top: 15px;
+
+    @include spec(white) {
+      color: $black;
+    }
+    @include spec(black) {
+      color: $white;
+    }
+
+    .ksma-search-result-breadcrumbs {
+      .ksma-search-result-breadcrumbs__link {
+        color: $grey-92;
+
+        @include spec(white) {
+          color: $black;
+        }
+        @include spec(black) {
+          color: $white;
+        }
+      }
+
+      .ksma-search-result-breadcrumbs__delimiter {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .highlighted {
+    background-color: rgba(255, 91, 40, 0.15);
+    color: $orange;
+
+    @include spec(white) {
+      background-color: $black;
+      color: $white;
+    }
+    @include spec(black) {
+      background-color: $white;
+      color: $black;
+    }
+    @include spec(blue) {
+      color: $blue;
+    }
+  }
+}

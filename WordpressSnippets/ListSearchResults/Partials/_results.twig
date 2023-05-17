@@ -1,0 +1,28 @@
+{% if posts|length > 0 %}
+	{% set class = "ksma-search-results" %}
+	<ul class="{{ class }}">
+		{% for post in posts  %}
+			{% set post_founded_string = '' %}
+			{% set highlighted_title = '' %}
+			{% for highlight in highlighted %}
+			{% if highlight.ID == post.ID %}
+				{% set post_founded_string = highlight.string %}
+				{% set highlighted_title = highlight.title %}
+			{% endif %}
+			{% endfor %}
+			<li class="{{ class }}__item">
+				<article class="{{ class }}__post">
+					<h3 class="{{ class }}__title">
+						<a href="{{ post.link }}">{{ highlighted_title }}</a>
+					</h3>
+					<p class="{{ class }}__desc">{{ post_founded_string }}</p>
+					<footer class="{{ class }}__footer">{{ footer_breadcrumbs[post.ID] }}</footer>
+				</article>
+			</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<div class="noResults boxPadding">
+		<p>{{ labels.noResults }}</p>
+	</div>
+{% endif %}

@@ -1,0 +1,14 @@
+{% if show %}
+  <div class="ksma-site-breadcrumbs">
+    <div class="ksma-site-breadcrumbs__wrap">
+      {% for breadcrumb in breadcrumbs %}
+        {% if breadcrumb.link != '' %}
+          <a href="{{ breadcrumb.link }}" class="ksma-site-breadcrumbs__item">{{ breadcrumb.anchor }}</a>
+        {% else %}
+          <span class="ksma-site-breadcrumbs__item">{{ breadcrumb.anchor }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {{ renderComponent('SocialShare') }}
+  </div>
+{% endif %}

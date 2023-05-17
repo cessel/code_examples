@@ -1,0 +1,101 @@
+.ksma-site-breadcrumbs {
+  @extend .ksma-container;
+  padding-bottom: 14px;
+  padding-top: 10px;
+  width: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+
+  @include bp(md) {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  @include bp(xl) {
+    padding-bottom: 24px;
+    padding-top: 20px;
+  }
+
+  &__wrap {
+    align-items: center;
+    background: $white-f0;
+    border-radius: 14px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 0 8px;
+    vertical-align: top;
+    
+    @include spec(white) {
+      background: none;
+      border: 2px solid $black;
+      border-radius: 0;
+      padding: 12px;
+    }
+    @include spec(black) {
+      border-color: $white;
+    }
+    @include spec(size-md) {
+      padding: 16px;
+    }
+    @include spec(size-lg) {
+      padding: 20px;
+    }
+  }
+
+  &__item {
+    color: $grey-55;
+    font-size: rem(12);
+    line-height: rem(26);
+    text-decoration: none;
+
+    @include spec(white) {
+      color: $black;
+      font-size: rem(16);
+    }
+    @include spec(black) {
+      color: $white;
+    }
+
+    &:not(span):hover {
+      text-decoration: underline;
+    }
+
+    &:not(:last-child)::after {
+      background: url('../../assets/icons/icon-delimiter.svg') center no-repeat;
+      content: '';
+      display: inline-block;
+      height: 8px;
+      padding: 0 7px;
+      position: relative;
+      top: -1px;
+      vertical-align: middle;
+      width: 5px;
+
+      @include spec(white) {
+        background-image: url('../../assets/icons/icon-delimiter-black.svg');
+      }
+      @include spec(black) {
+        background-image: url('../../assets/icons/icon-delimiter-white.svg');
+      }
+      @include spec(size-md) {
+        background-size: 7px;
+        height: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 7px;
+      }
+      @include spec(size-lg) {
+        background-size: 9px;
+        height: 12px;
+        padding-left: 13px;
+        padding-right: 13px;
+        width: 9px;
+      }
+    }
+  }
+
+  .ksma-social-share {
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+}

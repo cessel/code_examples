@@ -1,0 +1,66 @@
+.ksma-block-map {
+  margin-left: -20px;
+  margin-right: -20px;
+
+  @include bp(md) {
+    border-radius: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+  }
+
+  &.is-bg-white {
+    background: $white;
+  }
+
+  &__map {
+    background-size: cover;
+    background-size: cover;
+    height: 420px;
+    position: relative;
+
+    @include bp(md) {
+      height: 260px;
+    }
+    @include bp(xl) {
+      height: 300px;
+    }
+    @include spec(white) {
+      filter: grayscale(1);
+    }
+  }
+
+  &__loader {
+    align-content: center;
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.7s ease;
+
+    &::after {
+      animation: rotation 1s linear infinite;
+      border: solid 3px #000;
+      border-left-color: transparent;
+      border-radius: 50%;
+      content: '';
+      height: 30px;
+      opacity: 0.5;
+      width: 30px;
+    }
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(359deg);
+    }
+  }
+}
