@@ -1,2 +1,6 @@
 /vendor
 /composer.lock
+
+/LeetCode/Easy/not_optimized.php
+/LeetCode/Medium/not_optimized.php
+/LeetCode/Hard/not_optimized.php
